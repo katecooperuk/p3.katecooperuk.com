@@ -4,6 +4,6 @@
 
 $('.doors').click(function(){
 
-	$('door_that_was_clicked').css('background-image', 'url(images/tree.jpg)');
+	console.log('Door was clicked');
 	
 });
