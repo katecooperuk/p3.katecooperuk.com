@@ -1,0 +1,14 @@
+@charset "UTF-8";
+/* CSS Doors */
+
+.doors {
+	width:80px;
+	height:80px;
+	margin:20px;
+	border:1px solid grey;
+	float:left;
+	cursor:pointer;
+	font:100;
+	color:gray;
+	text-align:center;
+}
