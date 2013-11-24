@@ -13,3 +13,19 @@ body {
 	width:600px;
 	margin:0 auto;
 }
+
+.doors {
+	width:100px;
+	height:80px;
+	margin:20px;
+	border:1px solid grey;
+	float:left;
+	cursor:pointer;
+	font-size:16px;
+	color:gray;
+	text-align:center;
+}
+
+.doors:hover {
+	border:1px solid red;
+}
