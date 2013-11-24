@@ -12,9 +12,12 @@
 	color:gray;
 	text-align:center;
 	background-color:#fff;
-	opacity:0.5;
+	opacity: .8;
 }
 
-#dec1 {
-	background-image:url('/images/tree.jpg') hidden;
+.doors:hover {
+	border:1px solid grey;
+	color:red;
+	background-color:#fff;
+	opacity: 1;
 }
