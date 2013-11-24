@@ -3,7 +3,10 @@
 
 body {
 	margin:100px;
-	background-color:#15559a;
+	background-color:#021f60;
+	background-image:url('/images/calendar-background.jpg');
+	background-repeat:no-repeat;
+	background-position:center; 
 }
 
 #calendar {
