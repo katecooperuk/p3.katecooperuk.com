@@ -51,26 +51,43 @@ $('.doors').click(function(){
 	Set Up Splice to select random image and ensure it's only used once
 -------------------------------------------------------------------------------------------------*/    
      
-    function getRandomImage(arr) {
+function getRandomImage(arr) {
     
-    	if (arr.length > 0) { 
-        random = Math.floor(Math.random()*arr.length)
-        return arr.splice(random, 1)[0];
-    } 
-}
+    if (arr.length > 0) { 
+    random = Math.floor(Math.random()*arr.length)
+	return arr.splice(random, 1)[0];
+	} 
 
-	//console.log(imgRandom(calendarImg));
+}
+ 
+/*-------------------------------------------------------------------------------------------------
+	Set Up Date Function
+-------------------------------------------------------------------------------------------------*/  
+
+var today = new Date()
+var day = today.getDate()
+
+console.log(today);
  
 /*-------------------------------------------------------------------------------------------------
 	Door Open - select Random background image from Array
 -------------------------------------------------------------------------------------------------*/
 
-$('.doors').click(function(){ 
-
-	// Select Random Image
-	var doorImage = getRandomImage(calendarImg); 
-	
-	// Change background image of door that was clicked
-	$(this).css('background-image', doorImage); 
-	
+$('.doors').click(function () {
+    /* Commented out for testing
+    if (today.getMonth() !== 11) {
+        return;
+    }
+    */
+    console.log($(this).attr('id'));
+    
+    if ($(this).attr('id') !== 'dec' + (day - 10)) { // make it 20th Dec for testing
+        
+        console.log('Not Today');
+        
+        return;
+  
+    }
+    
+    console.log('Today');
 });
