@@ -2,11 +2,10 @@
 /* CSS Main Calendar */
 
 body {
-	margin:50px;
 	background-color:#021f60;
 	background-image:url('/images/calendar-background.jpg');
 	background-repeat:no-repeat;
-	background-position:center;
+	background-position:center top;
 	font-family:'Muli', sans-serif; 
 }
 
@@ -20,8 +19,17 @@ h4	{
 	color:#fff;
 }
 
+#pagewrapper {
+	width:999px;
+	height:906px;
+	margin:0 auto;
+}
+
+/* Calendar */
+
 #calendar {
 	width:600px;
+	height:800px;
 	margin:0 auto;
 }
 
@@ -39,4 +47,15 @@ h4	{
 
 .doors:hover {
 	border:1px solid red;
+}
+
+/* Footer */
+
+footer {
+	display:block;
+	clear:both;
+	padding:10px;
+	background-color:#021f60;
+	color:#fff;
+	font-size:70%;	
 }
