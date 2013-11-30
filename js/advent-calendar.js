@@ -3,7 +3,9 @@
 -------------------------------------------------------------------------------------------------*/
 
 $(document).ready( function(){
-        $.fn.snow({ minSize: 5, maxSize: 30, newOn: 1000, flakeColor: '#FFF' });
+	
+	$.fn.snow({ minSize: 5, maxSize: 30, newOn: 1000, flakeColor: '#FFF' });
+
 });
 
 /*-------------------------------------------------------------------------------------------------
@@ -67,9 +69,6 @@ function getRandomImage(arr) {
 var today = new Date()
 var day = today.getDate()
 
-console.log(today);
-
-
 /*-------------------------------------------------------------------------------------------------
 	Door Open - select Random background image from Array
 -------------------------------------------------------------------------------------------------*/
@@ -82,8 +81,6 @@ $('.doors').click(function () {
     }
     */
     
-    console.log($(this).attr('id'));
-    
     if ($(this).attr('id') <= 'dec' + (day - 20)) { // make it 20th Dec for testing
         
         // Select Random Image
@@ -92,12 +89,10 @@ $('.doors').click(function () {
 		// Change background image of door that was clicked
 		$(this).css('background-image', doorImage);
         
-        console.log('Today or less');
-        
         return;  
     }
     
     // Show image telling user to come back
     $(this).css('background-image', 'url(/images/come_back.png)');
-    console.log('greater than today');
+
 });
