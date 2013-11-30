@@ -68,7 +68,8 @@ var today = new Date()
 var day = today.getDate()
 
 console.log(today);
- 
+
+
 /*-------------------------------------------------------------------------------------------------
 	Door Open - select Random background image from Array
 -------------------------------------------------------------------------------------------------*/
@@ -83,21 +84,20 @@ $('.doors').click(function () {
     
     console.log($(this).attr('id'));
     
-    if ($(this).attr('id') !== 'dec' + (day - 10)) { // make it 20th Dec for testing
+    if ($(this).attr('id') <= 'dec' + (day - 20)) { // make it 20th Dec for testing
         
-        // Show image telling user to come back
-        $(this).css('background-image', 'url(/images/come_back.png)');
+        // Select Random Image
+		var doorImage = getRandomImage(calendarImg); 
+	
+		// Change background image of door that was clicked
+		$(this).css('background-image', doorImage);
         
-        console.log('Not Today');
+        console.log('Today or less');
         
         return;  
     }
     
-    // Select Random Image
-	var doorImage = getRandomImage(calendarImg); 
-	
-	// Change background image of door that was clicked
-	$(this).css('background-image', doorImage);
-    
-    console.log('Today');
+    // Show image telling user to come back
+    $(this).css('background-image', 'url(/images/come_back.png)');
+    console.log('greater than today');
 });
