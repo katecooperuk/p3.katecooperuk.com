@@ -74,18 +74,20 @@ console.log(today);
 -------------------------------------------------------------------------------------------------*/
 
 $('.doors').click(function () {
+    
     /* Commented out for testing
     if (today.getMonth() !== 11) {
         return;
     }
     */
+    
     console.log($(this).attr('id'));
     
     if ($(this).attr('id') !== 'dec' + (day - 10)) { // make it 20th Dec for testing
         
         // Show image telling user to come back
-        $(this).css('background-image', 'url(/images/come_back.jpg)');
-        
+        $(this).css('background-image', 'url(/images/come_back.png)');
+        $(this).fadeOut(2000);
         console.log('Not Today');
         
         return;
