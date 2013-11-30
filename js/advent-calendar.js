@@ -83,11 +83,20 @@ $('.doors').click(function () {
     
     if ($(this).attr('id') !== 'dec' + (day - 10)) { // make it 20th Dec for testing
         
+        // Show image telling user to come back
+        $(this).css('background-image', 'url(/images/come_back.jpg)');
+        
         console.log('Not Today');
         
         return;
   
     }
+    
+    // Select Random Image
+	var doorImage = getRandomImage(calendarImg); 
+	
+	// Change background image of door that was clicked
+	$(this).css('background-image', doorImage);
     
     console.log('Today');
 });
