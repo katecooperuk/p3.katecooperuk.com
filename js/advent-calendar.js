@@ -87,11 +87,10 @@ $('.doors').click(function () {
         
         // Show image telling user to come back
         $(this).css('background-image', 'url(/images/come_back.png)');
-        $(this).fadeOut(2000);
+        
         console.log('Not Today');
         
-        return;
-  
+        return;  
     }
     
     // Select Random Image
