@@ -38,9 +38,17 @@ $('.doors').click(function(){
  	"url(/images/snow.jpg)",
  	]
      
-    function imgRandom(imgArr) {
-		return imgArr[Math.floor(Math.random() * imgArr.length)];
-	}
+/*-------------------------------------------------------------------------------------------------
+	Set Up Splice to select random image and ensure it's only used once
+-------------------------------------------------------------------------------------------------*/    
+     
+    function getRandomImage(arr) {
+    
+    	if (arr.length > 0) { 
+        random = Math.floor(Math.random()*arr.length)
+        return arr.splice(random, 1)[0];
+    } 
+}
 
 	//console.log(imgRandom(calendarImg));
  
@@ -51,7 +59,7 @@ $('.doors').click(function(){
 $('.doors').click(function(){ 
 
 	// Select Random Image
-	var doorImage = imgRandom(calendarImg); 
+	var doorImage = getRandomImage(calendarImg); 
 	
 	// Change background image of door that was clicked
 	$(this).css('background-image', doorImage); 
