@@ -86,7 +86,7 @@ $('.doors').click(function () {
         return;
     }
     
-    if ($(this).attr('id') <= 'dec' + (day + 23)) { // make it 11th Dec for testing
+    if ($(this).attr('id') <= 'dec' + day) {
         
         // Select Random Image
 		var doorImage = getRandomImage(calendarImg); 
@@ -101,6 +101,15 @@ $('.doors').click(function () {
     $(this).css('background-image', 'url(/images/come_back.png)');
 
 });
+
+/*-------------------------------------------------------------------------------------------------
+	Reveal Hidden Video to play on December 24
+-------------------------------------------------------------------------------------------------*/
+if (today.getDate() == 24) {
+	
+	$('#video').css('visibility', 'visible');
+
+}
 
 /*-------------------------------------------------------------------------------------------------
 	jQuery Plugin - Set Cookie so returning user has all the doors open from last session
@@ -121,12 +130,3 @@ $.cookie(); // => { "the_cookie": "the_value", "...remaining": "cookies" }
 $.cookie.raw = true;
 
 $.cookie.json = true;
-
-
-/*-------------------------------------------------------------------------------------------------
-	Reveal Hidden Link to Play Video on December 24
--------------------------------------------------------------------------------------------------*/
-if (today.getDate() == 01) {
-	
-	console.log("today is 1 Dec"); // testing on December 1st
-}
