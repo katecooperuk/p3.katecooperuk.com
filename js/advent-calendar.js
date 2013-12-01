@@ -105,16 +105,16 @@ $('.doors').click(function () {
 -------------------------------------------------------------------------------------------------*/
 
 // Create Cookie - Expires in 40 days
-$.cookie('the_cookie', 'the_value', { expires: 30, path: '/' });
+$.cookie('door_cookie', '1', { expires: 30, path: '/' });
 
 // Read Cookie
-$.cookie('the_cookie'); // => "the_value"
+$.cookie('door_cookie'); // => "the_value"
 $.cookie('not_existing'); // => undefined
 
 $.cookie(); // => { "the_cookie": "the_value", "...remaining": "cookies" }
 
 // Returns true when cookie was found, false when no cookie was found...
-//$.removeCookie('session_cookie', { path: '/' });
+//$.removeCookie('the_cookie', { path: '/' });
 
 $.cookie.raw = true;
 
