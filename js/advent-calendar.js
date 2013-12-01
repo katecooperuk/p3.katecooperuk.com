@@ -2,9 +2,14 @@
 	JQuery Snow Plugin
 -------------------------------------------------------------------------------------------------*/
 
-$(document).ready( function(){
+$(document).ready(function(){
 	
-	$.fn.snow({ minSize: 5, maxSize: 30, newOn: 1000, flakeColor: '#FFF' });
+	$.fn.snow({ 
+	minSize: 5, 
+	maxSize: 30, 
+	newOn: 1000, 
+	flakeColor: '#FFF' 
+	});
 
 });
 
@@ -75,13 +80,11 @@ var day = today.getDate()
 
 $('.doors').click(function () {
     
-    /* Commented out for testing
     if (today.getMonth() !== 11) {
         return;
     }
-    */
     
-    if ($(this).attr('id') <= 'dec' + (day - 20)) { // make it 20th Dec for testing
+    if ($(this).attr('id') <= 'dec' + (day + 10)) { // make it 11th Dec for testing
         
         // Select Random Image
 		var doorImage = getRandomImage(calendarImg); 
