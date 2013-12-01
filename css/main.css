@@ -7,6 +7,7 @@ body {
 	background-repeat:no-repeat;
 	background-position:center top;
 	font-family:'Muli', sans-serif; 
+	font-size:16px;
 }
 
 h1	{
@@ -29,14 +30,14 @@ h4	{
 
 #calendar {
 	width:600px;
-	height:800px;
+	height:720px;
 	margin:0 auto;
 }
 
 .doors {
 	width:100px;
 	height:80px;
-	margin:20px;
+	margin:18px;
 	border:1px solid white;
 	float:left;
 	cursor:pointer;
@@ -49,12 +50,31 @@ h4	{
 	border:1px solid red;
 }
 
+/* Video Link */
+
+#video {
+	visibility:hidden;
+	font-size:120%;
+	color:#be0b02;
+	text-align:center;
+}
+
+#video a {
+	color:#be0b02;
+	text-decoration:none;
+}
+
+#video a:hover {
+	color:#1e4492;
+}
+
 /* Footer */
 
 footer {
 	display:block;
 	clear:both;
-	padding:10px;
+	padding:20px;
 	color:#a2b1c2;
 	font-size:80%;	
 }
+
