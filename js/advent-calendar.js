@@ -74,6 +74,8 @@ function getRandomImage(arr) {
 var today = new Date()
 var day = today.getDate()
 
+console.log(today);
+
 /*-------------------------------------------------------------------------------------------------
 	Door Open - select Random background image from Array
 -------------------------------------------------------------------------------------------------*/
@@ -84,7 +86,7 @@ $('.doors').click(function () {
         return;
     }
     
-    if ($(this).attr('id') <= 'dec' + (day + 10)) { // make it 11th Dec for testing
+    if ($(this).attr('id') <= 'dec' + (day + 23)) { // make it 11th Dec for testing
         
         // Select Random Image
 		var doorImage = getRandomImage(calendarImg); 
@@ -120,3 +122,11 @@ $.cookie.raw = true;
 
 $.cookie.json = true;
 
+
+/*-------------------------------------------------------------------------------------------------
+	Reveal Hidden Link to Play Video on December 24
+-------------------------------------------------------------------------------------------------*/
+if (today.getDate() == 01) {
+	
+	console.log("today is 1 Dec"); // testing on December 1st
+}
