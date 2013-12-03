@@ -71,8 +71,8 @@ function getRandomImage(arr) {
 	Set Up Date Function
 -------------------------------------------------------------------------------------------------*/  
 
-var today = new Date()
-var day = today.getDate()
+var today = new Date(),
+ day = today.getDate();
 
 console.log(today);
 
@@ -81,25 +81,22 @@ console.log(today);
 -------------------------------------------------------------------------------------------------*/
 
 $('.doors').click(function () {
-    
+
     if (today.getMonth() !== 11) {
         return;
     }
     
-    if ($(this).attr('id') <= 'dec' + day) {
-        
-        // Select Random Image
-		var doorImage = getRandomImage(calendarImg); 
-	
-		// Change background image of door that was clicked
-		$(this).css('background-image', doorImage);
-        
-        return;  
-    }
+    // Check if the date is tomorrow or later
+    if (+($(this).attr('id').split('dec')[1]) > day) {
     
-    // Show image telling user to come back
-    $(this).css('background-image', 'url(/images/come_back.png)');
-
+    	console.log('tomorrow or later');
+        
+        return;
+      
+    }
+	
+    console.log('today or earlier');
+    
 });
 
 /*-------------------------------------------------------------------------------------------------
