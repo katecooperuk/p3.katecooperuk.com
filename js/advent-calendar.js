@@ -83,6 +83,7 @@ console.log(today);
 $('.doors').click(function () {
 
     if (today.getMonth() !== 11) {
+    
         return;
     }
     
@@ -93,7 +94,6 @@ $('.doors').click(function () {
 		$(this).css('background-image', 'url(/images/come_back.png)');
         
         return;
-      
     }
     
     // Otherwise it is today or earlier
@@ -103,8 +103,6 @@ $('.doors').click(function () {
 	
 	// Change background image of door that was clicked
 	$(this).css('background-image', doorImage);
-	
-    console.log('The door of the day!');
     
 });
 
