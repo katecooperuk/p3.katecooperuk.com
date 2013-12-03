@@ -89,13 +89,22 @@ $('.doors').click(function () {
     // Check if the date is tomorrow or later
     if (+($(this).attr('id').split('dec')[1]) > day) {
     
-    	console.log('tomorrow or later');
+    	// Show image telling user to come back
+		$(this).css('background-image', 'url(/images/come_back.png)');
         
         return;
       
     }
+    
+    // Otherwise it is today or earlier
+    
+    // Select Random Image
+	var doorImage = getRandomImage(calendarImg);
 	
-    console.log('today or earlier');
+	// Change background image of door that was clicked
+	$(this).css('background-image', doorImage);
+	
+    console.log('The door of the day!');
     
 });
 
