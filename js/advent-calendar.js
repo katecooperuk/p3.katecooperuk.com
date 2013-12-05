@@ -77,18 +77,6 @@ var today = new Date(),
 console.log(today);
 
 /*-------------------------------------------------------------------------------------------------
-	Cookie
--------------------------------------------------------------------------------------------------*/
-
-// Set the cookie
-document.cookie = "door_cookie";
-
-// Check if it is set
-if(document.cookie.indexOf("door_cookie") >= 0);
-
-console.log("Cookie is set");
-
-/*-------------------------------------------------------------------------------------------------
 	Door Open - select Random background image from Array
 -------------------------------------------------------------------------------------------------*/
 
@@ -117,6 +105,23 @@ $('.doors').click(function () {
 	$(this).css('background-image', doorImage);
     
 });
+
+/*-------------------------------------------------------------------------------------------------
+	Create and Store Cookie
+-------------------------------------------------------------------------------------------------*/
+
+//on document ready, checks if the cookie is set, and if so, sets the background with it's value
+$(function(){
+  if($.cookie('background-image') != null){
+     $(this).css('background-image', $.cookie('background-image'));
+  }
+});
+
+//here you set the cookie, with the value you want
+$(function() {
+  $(this).css('background-image', doorImage);
+  $.cookie('background-image', doorImage);
+ });
 
 /*-------------------------------------------------------------------------------------------------
 	Reveal Hidden Video to play on December 25
