@@ -117,7 +117,7 @@ $(function(){
   }
 });
 
-//here you set the cookie, with the value you want
+// Set cookie
 $(function() {
   $(this).css('background-image', doorImage);
   $.cookie('background-image', doorImage);
