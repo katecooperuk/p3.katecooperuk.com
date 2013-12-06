@@ -1,4 +1,19 @@
 /*-------------------------------------------------------------------------------------------------
+	HTML 5 Storage
+-------------------------------------------------------------------------------------------------*/
+function hasLocalStorage() {
+	
+	if(localStorage) {
+		return "local storage supported";
+	}
+	
+	else {
+		return "local storage not supported";
+	}
+	
+}
+
+/*-------------------------------------------------------------------------------------------------
 	JQuery Snow Plugin
 -------------------------------------------------------------------------------------------------*/
 
@@ -101,27 +116,16 @@ $('.doors').click(function () {
     // Select Random Image
 	var doorImage = getRandomImage(calendarImg);
 	
+	// Store Random Image
+	var inputImage = document.getElementById('doorOpen');
+	localStorage.setItem('doorOpen', doorImage);
+	
 	// Change background image of door that was clicked
 	$(this).css('background-image', doorImage);
+	
+	 var storedValue = localStorage.getItem('doorOpen');
     
 });
-
-/*-------------------------------------------------------------------------------------------------
-	Create and Store Cookie
--------------------------------------------------------------------------------------------------*/
-
-//on document ready, checks if the cookie is set, and if so, sets the background with it's value
-$(function(){
-  if($.cookie('background-image') != null){
-     $(this).css('background-image', $.cookie('background-image'));
-  }
-});
-
-// Set cookie
-$(function() {
-  $(this).css('background-image', doorImage);
-  $.cookie('background-image', doorImage);
- });
 
 /*-------------------------------------------------------------------------------------------------
 	Reveal Hidden Video to play on December 25
